@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmação de Presença - Chá Revelação</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to right, #fcd1d1, #d1eaff);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    h1 {
+      text-align: center;
+      color: #ff69b4;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      background-color: #87ceeb;
+      border: none;
+      padding: 12px;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #00bfff;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Confirme sua presença!</h1>
+    <form id="confirmForm">
+      <label for="nome">Nome</label>
+      <input type="text" id="nome" name="nome" required>
+
+      <label for="presenca">Vai comparecer?</label>
+      <select id="presenca" name="presenca">
+        <option value="Sim">Sim</option>
+        <option value="Não">Não</option>
+      </select>
+
+      <label for="observacoes">Observações</label>
+      <textarea id="observacoes" name="observacoes" rows="3" placeholder="Ex: Vou levar 2 acompanhantes, tenho restrição a lactose..."></textarea>
+
+      <button type="submit">Confirmar</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById('confirmForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Presença confirmada! Obrigada por responder.');
+      this.reset();
+    });
+  </script>
+</body>
+</html>
